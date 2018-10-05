@@ -1,0 +1,37 @@
+#img{
+    height: 100px;
+    width:100px;
+    margin-right:20px;
+}
+.button{
+    border: 2px solid rgba(0,0,0,0.09);
+    background-color:#F8F9FA; 
+    padding-bottom: 15px;
+    padding-top: 15px; 
+}
+.cover {
+    background-image: url("http://yodobi.com/4k-Wallpapers/4k-wallpapers-phone-Is-4K-Wallpaper.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    margin-bottom: 5px;
+    height: 30em;
+}
+body{
+    text-align: center;
+}
+
+.tabButton.selected  {
+    color: #212529;
+}
+.tabButton  {
+    color: rgba(0,0,0,0.5)
+}
+.tabPage    {
+    min-height: 100vh;
+
+}

@@ -1,0 +1,53 @@
+<div class="container">
+  <h1>My Profile :</h1>
+  <strong>Student Name :</strong> {{studentResume.firstName +" " +studentResume.firstName}}
+  <!-- <div *ngFor=""> -->
+  <strong>Email :</strong> {{studentResume.email}}
+  <strong>Phone :</strong> {{studentResume.phone}}
+  <strong>
+    <h3>Education: </h3>
+  </strong>
+  <strong>
+    <h4>Undergraduate</h4>
+  </strong>
+  <div *ngFor="let ug of studentResume.resume.education.ug">
+    <strong>Degree :</strong>{{ug.deg}}
+    <strong>College :</strong>{{ug.clg}}
+    <strong>Start Year :</strong>{{ug.startYear}}
+    <strong>End Year :</strong>{{ug.endYear}}
+    <strong>Stream :</strong>{{ug.stream}}
+    <strong>Scale :</strong>{{ug.scale}}
+    <strong>Grade :</strong>{{ug.grade}}
+  </div>
+  <div *ngFor="let pg of studentResume.resume.education.pg">
+    <div></div>
+    <strong>Degree :</strong>{{pg.deg}}
+    <div>
+      <strong>College :</strong>{{pg.clg}}</div>
+    <div>
+      <strong>Start Year :</strong>{{pg.startYear}}</div>
+    <div>
+      <strong>End Year :</strong>{{pg.endYear}}</div>
+    <div>
+      <strong>Stream :</strong>{{pg.stream}}</div>
+    <div>
+      <strong>Scale :</strong>{{pg.scale}}</div>
+    <div>
+      <strong>Grade :</strong>{{pg.grade}}</div>
+  </div>
+  <div>
+    <div>
+      <strong>School : </strong>{{studentResume.resume.education.hsc}}</div>
+    <div>
+      <strong>Year : </strong>{{studentResume.resume.education.hsc}}</div>
+    <div>
+      <strong>Board : </strong>{{studentResume.resume.education.hsc}}</div>
+    <div>
+      <strong>Scale : </strong>{{studentResume.resume.education.hsc}}</div>
+    <div>
+      <strong>Grade : </strong>{{studentResume.resume.education.hsc}}</div>
+    <div>
+      <strong>Stream : </strong>{{studentResume.resume.education.hsc}}</div>
+  </div>
+  
+</div>

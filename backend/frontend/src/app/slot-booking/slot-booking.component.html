@@ -1,0 +1,44 @@
+<div class="slotBooker">
+  Select Date:
+  <input type="text" #datepicker id="datepicker">
+  <hr>
+  <div class="dataSelection">
+    <div class="floorSelector">
+      <button *ngFor="let floor of floors" class="floorSelectOptions" [ngClass]="{'current': floor.name == currentFloor}" (click)="floorClicked(floor)">
+        {{floor.name}}
+      </button>
+    </div>
+
+    <div *ngFor="let floor of floors">
+      <div *ngIf="floor.name == currentFloor">
+        {{floor.name}}
+        <span *ngFor="let room of floor.rooms" class="rooms" (click)="roomClicked(room)" [ngClass]="{'booked': room.bookstatus, 'selected': this.currentRoom == room.name}">
+          {{room.name}}
+
+        </span>
+        <hr>
+        <span class="timelineDisplay">
+          <span *ngFor="let room of floor.rooms">
+            <span *ngIf="room.name == currentRoom">
+              <span class="timeSlotBlocks" style="display:inline-block;" 
+              *ngFor="let slot of room.bookedStatus"
+              [ngClass]="{'booked':slot[1]}" >
+                <span>
+                  <b>{{slot[0]}}</b>
+                </span>
+                <hr>
+
+                <span *ngIf="slot[1]">Reserved</span>
+                <button *ngIf="!slot[1]">Book</button>
+              </span>
+            </span>
+          </span>
+        </span>
+      </div>
+
+    </div>
+  </div>
+
+
+
+</div>

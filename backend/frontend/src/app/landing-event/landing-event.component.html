@@ -1,0 +1,9 @@
+<div class="container" id="card">
+    <h2>Events :</h2>
+    <div class="row">
+        <div class="card col-sm-4" *ngFor="let item of eventList">
+            <h3>{{item.name}}</h3>
+            <h6>{{item.description}}</h6>
+        </div>
+    </div>
+</div>

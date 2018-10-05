@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign-Up</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="shortcut icon" href="/img/paw.png"/>
+	<script type="text/javascript" src="/js/jquery.min.js"></script>
+	
+  <script>
+    $(document).ready(function() {
+      $('#submit_sp').submit(function() {
+        $(this).ajaxSubmit({
+          error: function(xhr) {
+            status('Error: ' + xhr.status);
+          },
+         success: function(response) {
+          console.log(response);
+         }
+        });
+        //Very important line, it disable the page refresh.
+        return false;
+      });
+    });
+  </script>
+
+</head>
+<body id="signupPage">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Paawfect</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a class="page-scroll" href="#about">About</a></li>
+        <li><a class="page-scroll" href="#stories">Stories</a></li>
+        <li><a class="page-scroll" href="comm.html">Community</a></li>
+        <li><a class="page-scroll" href="deal.html">Deals</a></li>
+        
+      </ul>
+
+      <ul id="login" class="nav navbar-nav navbar-right">
+      
+        <li>
+          <a  style="display : <%= login %> " id="signup-btn1" class="btn btn-primary">Signup <i class="fa fa-user-plus" aria-hidden="true"></i>
+          </a>
+        </li> 
+
+        <li >
+          <a  style="display:<%=  signup %>" id="login-btn1" type="button"  class="btn btn-primary">Login <i class="fa fa-sign-in" aria-hidden="true"></i></a> 
+        </li>    
+
+      </ul>
+  </div>
+</div>
+</nav>
+
+<div class="signup_container" style="display:<%= signup %>">
+	<h2>Create Account</h2>
+	<form action="/signup"  method = "post">
+		<input type="text" name="name" placeholder="Name" required><br>
+		<input type="text" name="username" placeholder="Username" required><br>
+		<input type="text" name="email" placeholder="Email" required><br>
+		<input type="password" name="password" placeholder="Password" required><br>
+		<input id="submit_sp" type="submit" name="Submit" value="Submit" ><br>
+    <div class="g-recaptcha" data-sitekey="6LefQDYUAAAAALx7TGZcwmSqMeXkslfxf4YK2dbe"></div>  
+	</form>
+  <hr class = "style13">
+  <h4>Connect with : </h4>
+  <div class="otherLogin">
+    <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
+    <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
+  </div>
+</div>
+
+
+<div class="login_container" style="display:<%= login %>">
+	<h2>Login Form</h2>
+	<form action="/login" method = "post">
+		<input type="text" name="username" placeholder="Username" required><br>
+		<input type="password" name="password" placeholder="Password" required><br>
+		<input type="submit" name="Submit" value="Submit" ><br>
+	</form>
+  <a href="/forgot" > <h4>Forgot Password?</h4></a>
+  <hr class = "style13">
+  <h4>Connect with : </h4>
+  <div class="otherLogin">
+    <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
+    <a href="/auth/google" class="btn btn-danger"><span class="fa fa-google-plus"></span> Google</a>
+  </div>
+</div>
+
+<footer class="bs-docs-footer footer">
+  <div class="dark">
+  <div class="container">
+  <div class="row">
+
+  
+  <div class="col-md-3 col-lg-3">
+  <br>
+  <p style="color:#7d8289;">© 2017 Pawwfect, Inc. All rights reserved.</p>
+  <br><br><br>
+  </div>
+   <div class="col-md-9 col-lg-9">
+
+
+  
+ <nav class="navbar navbar-inverse">
+  <ul class="nav navbar-nav navbar-right"> 
+        <li><a href="/contact" > Contact </a></li>
+        <li><a href="/faq" > FAQ</a></li>
+        <li><a href="/user" >User Guide</a></li>
+        <li><a href="/dnd" >D&D</a></li>
+  </ul>
+  </nav>
+  
+</div>
+
+ 
+  </div>
+  </div>
+  </div>
+
+</footer>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+<script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>

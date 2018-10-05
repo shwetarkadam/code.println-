@@ -1,0 +1,512 @@
+
+/*******************Common*********************/
+
+body{
+  
+  height: 100%;
+  margin: 0;
+  font-family: lato;  
+  padding-top:50px; 
+}
+
+html{
+  height:100%;
+  overflow-x: hidden;
+}
+
+
+h1{
+  font-weight: 700;
+  font-size: 5em;
+  
+}
+
+footer{
+  margin: 0;
+}
+
+
+
+
+hr{
+  display: block;
+    margin-top: 3em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    width:auto;
+    border-color: #f8f8f8;
+}
+
+/*******************Common*********************/
+
+.guide li h3{
+  box-sizing: content-box;
+  padding: 0;
+  padding-left: 10px; 
+  margin: 0;
+  line-height: 60px;
+}
+
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}  
+
+#content
+{
+  text-align:center;
+  padding-top:20%;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+         0px 8px 13px rgba(0,0,0,0.1),
+         0px 18px 23px rgba(0,0,0,0.1);
+
+} 
+
+
+.guide{
+  padding: 0;
+  list-style: none;
+}
+.guide li a{
+  padding: 0;
+}
+.guide li{
+  margin: 10px;
+}
+
+.vr{
+    width:1px;
+    background-color: #000;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:250px;
+}
+
+
+#userImg{
+  padding: 0 20px;
+
+}
+#profileImg{
+  padding: 0 10px;
+
+}
+#profileImg > i{
+  margin: 5px 0;
+  font-size: 40px
+}
+#userImg > i {
+  margin: 5px 0;
+  font-size: 40px
+}
+
+.none{
+  display: none;
+}
+ 
+.intro {
+
+  display: table;
+  height:100%;
+  width: 100%;
+  padding:10%;
+  background: url(/img/intro-bg.jpg) no-repeat bottom center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-image: center;
+  text-align:center;
+  padding-top:10%;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+               0px 8px 13px rgba(0,0,0,0.1),
+               0px 18px 23px rgba(0,0,0,0.1);
+    
+  text-decoration-color :white;
+}
+.intro .intro-body {
+  display: table-cell;
+  vertical-align: middle;
+} 
+
+
+.parallax {
+    /* The image used */
+    background: url(/img/parrot.jpg) ;
+
+    /* Set a specific height */
+    min-height: 500px; 
+    min-width: 1600px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax {
+    /* The image used */
+    background: url(/img/hamster.jpg) ;
+
+    /* Set a specific height */
+    min-height: 500px; 
+    
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#login-dp{
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow:hidden;
+    background-color:rgba(255,255,255,.8);
+}
+#login-dp .help-block{
+    font-size:12px    
+}
+#login-dp .bottom{
+    background-color:rgba(255,255,255,.8);
+    border-top:1px solid #ddd;
+    clear:both;
+    padding:14px;
+}
+#login-dp .social-buttons{
+    margin:12px 0    
+}
+#login-dp .social-buttons a{
+    width: 49%;
+}
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+.btn-fb{
+    color: #fff;
+    background-color:#3b5998;
+}
+.btn-fb:hover{
+    color: #fff;
+    background-color:#496ebc 
+}
+.btn-tw{
+    color: #fff;
+    background-color:#55acee;
+}
+.btn-tw:hover{
+    color: #fff;
+    background-color:#59b5fa;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
+}
+.dark{
+  background-color: #222;
+  height: 20%;
+}
+
+
+.thumbnail .img{
+  height:100px;
+}
+
+.btn{
+}
+.btn-content {
+  color: #000;
+  background-color:transparent;
+  border-color: transparent;
+  width:100%;
+  text-align: left;
+  min-width: 140px;
+}
+.btn-content:focus,
+
+.btn-content.focus {
+  color: #31708f;
+  background-color:  #d9edf7;
+  border-color:  #d9edf7;
+}
+.btn-content:hover {
+  color: #31708f;
+  background-color:  #d9edf7;
+  border-color:  #d9edf7;
+}
+
+.btn-content:active,
+.btn-content.active,
+.open > .dropdown-toggle.btn-content {
+  color: #31708f;
+  background-color:  #d9edf7;
+  border-color:  #d9edf7;
+}
+
+.ng-invalid.ng-dirty {   border-color: #FA787E; }
+ 
+.ng-valid.ng-dirty { 
+   border-color: #78FA89; 
+}
+
+
+.login_form{
+  display: none;
+}
+.register_form{
+  display :block;
+}
+
+/*******************  SignUp.ejs *********************/
+
+.signup_container{
+  margin: 100px auto;
+  width: 500px;
+  box-shadow: 3px 3px 50px rgba(0,0,0,0.5);
+  box-sizing: border-box;
+  padding: 50px 0;
+  color: white;
+}
+.signup_container h2{
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.signup_container form{
+  margin: 30px auto;
+}
+
+.signup_container form input{
+  margin: 20px 10%;
+  width: 80%;
+  line-height: 40px;
+  border-radius: 10px;
+  border-style: none;
+  padding: 0 10px;
+  box-sizing: border-box;
+  color: black;
+  background-color: #1111
+}
+.signup_container form input[type=submit]{
+  background-color: steelblue;
+  color: white;
+}
+.signup_container h4{
+  
+  margin: 20px 0;
+  text-align: center;
+  box-sizing: content-box;
+}
+
+
+.login_container{
+  margin: 100px auto;
+  width: 500px;
+  box-shadow: 3px 3px 50px rgba(0,0,0,0.5);
+  box-sizing: border-box;
+  padding: 50px 0;
+  color: white;
+}
+
+.login_container h2{
+  margin: 0 auto;
+  text-align: center;
+  color: white;
+}
+
+.login_container form{
+  margin: 30px auto;
+}
+
+.login_container form input{
+  margin: 20px 10%;
+  width: 80%;
+  line-height: 40px;
+  border-radius: 10px;
+  border-style: none;
+  padding: 0 10px;
+  box-sizing: border-box;
+  color: black;
+  background-color: #1111;
+}
+.login_container form input[type=submit]{
+  background-color: steelblue;
+  color: white;
+}
+.login_container h4{
+  
+  margin: 20px 0;
+  text-align: center;
+  box-sizing: content-box;
+}
+
+
+#signupPage
+{
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+ .otherLogin{
+  margin: auto 25%;
+  width: 80%;
+  }
+  .otherLogin a{
+    width: 30%;
+  }
+
+/*******************  SignUp.ejs  *********************/
+
+
+
+
+/*******************  Profile.ejs  *********************/
+
+.profile_container{
+  margin: 10% 5%;
+  height: 80%;
+  width: 90%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 700;
+}
+.profile_container button{
+  width: 30%;
+  line-height: 40px;
+  min-width: 100px;
+  margin: 33% 35%;
+  border-style: none;
+  border-radius: 5px;
+  background-color: steelblue;
+  box-sizing: border-box;
+}
+.profile_container i{
+    font-size: 15px;
+}
+
+.setting_container{
+  margin: 10% 5%;
+  height: 80%;
+  width: 90%;
+  border: 1px solid black;
+  box-sizing: border-box;
+  color: black;
+  font-weight: 700;
+}
+.chg h2{
+  background-color: #efefef;
+  padding-left: 10px;
+  line-height: 50px;
+  margin: 0;
+}
+.chg {
+  line-height: 40px;
+  margin: 10px 20px;
+  padding:0;
+  border: 1px solid  #efefef;
+}
+.chg input{
+  background-color: #efefef;
+  width: 40%;
+  line-height: 40px;
+  margin: 10px 30px;
+  padding:  0 10px;
+  border-radius: 7px;
+  border: none;
+  box-sizing: border-box;
+}
+.chg input[type=submit]{
+  background-color: steelblue;
+  color: white;
+}
+
+/*******************  Profile.ejs  *********************/
+
+
+/*******************  Search.ejs  *********************/
+
+.searchPage{
+  text-align: center; 
+}
+.searchPage  .row{
+  display: flex;  
+  flex-wrap: wrap;
+
+}
+.searchPage .thumbnail{
+  margin-top: 20px;
+}
+.searchPage > .jumbotron{
+  margin-top:20px ;
+  text-align: left;
+
+}
+
+.searchPage i {
+  size: 40px;
+  color: #337ab7;
+}
+/*******************  Search.ejs  *********************/
+
+/*******************  SearchShow.ejs  *********************/
+
+.searchShow{
+  margin-top: 10px;
+}
+
+.searchShow .thumbnail{
+  padding : 0;
+}
+
+.searchShow img{
+  width: 100%;
+}
+.searchShow ul{
+  list-style-type: none;
+}
+
+.searchShow .well{
+  padding: 30px;
+}
+.searchShow .caption h4{
+  color: steelblue;
+}
+.style13 {
+  height: 10px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #8c8b8b inset;
+  margin-top: 20px;
+}
+.searchShow .inline{
+    display:inline;
+} 
+
+
+
+/*******************  SearchShow.ejs  *********************/
+
+.alert {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.g-recaptcha {
+  margin: 0 20%;
+}

@@ -1,0 +1,29 @@
+<!-- <div class="row">
+  <div *ngFor="let member of council.members">
+    <div class="col-sm-4">
+      <span class="img-fluid">
+        <img [src]=member.photo alt="profile photo">
+      </span>
+      <p>
+        <strong>Name :</strong>{{member.name}}</p>
+      <p>
+        <strong>Position :</strong>{{member.position}}</p>
+      <p>
+        <strong>Name</strong>{{member.phone}}</p>
+    </div>
+  </div>
+</div> -->
+
+<div class="container" id="card">
+  <h1>{{council.name}}</h1>
+  <p>Email id: {{council.email}}</p>
+  <h2>Events :</h2>
+  <div class="row">
+    <div class="card col-sm-4" *ngFor="let member of council.members">
+      <img [src]=member.photo alt="">
+      <h3>{{member.name}}</h3>
+      <h6>{{member.position}}</h6>
+      <h6>{{member.phone}}</h6>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="cover">
+</div>
+<div class="container">
+  <div class="row">
+    <button class="button col-md-4 tabButton" (click)="companyProfile()" [ngClass]="{'selected':currentPage == 'companyProfile'}">Company Profile</button>
+    <button class="button col-md-4 tabButton" (click)="viewStudent()" [ngClass]=" { 'selected':currentPage=='studentApplications' } ">View Student Applications</button>
+    <button class="button col-md-4 tabButton " (click)="eligibilityCriteria()" [ngClass]="{ 'selected':currentPage=='eligibilityForm'} ">Set Eligibility Criteria</button>
+  </div>
+  <br>
+  <div class="tabPage companyProfile " *ngIf="currentPage=='companyProfile' ">
+    <h1>
+      <img id="img" src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAMAAwQIAAkAAQAAAAAAABInAAAAJDA0NDI0MjE1LTYxYzUtNGE0NC05ZGQ3LTJjZmEyYjhiY2VjZA.bin ">{{company.name}}
+    </h1>
+    <h2>About Us:</h2>
+    <p>{{company.description}}</p>
+    <h2>Company Details:</h2>
+    <p>
+      <strong>Website :</strong>
+      <a [href]=company.website>{{company.website}}</a>
+    </p>
+    <p>
+      <strong>Headquarters :</strong>
+      {{company.headquarters}}</p>
+    <p>
+      <strong>Company Type :</strong>
+      {{company.company_type}}</p>
+    <p>
+      <strong>Company Size :</strong>
+      {{company.company_size}}</p>
+    <p>
+      <strong>Company Specialities :</strong>
+      {{company.specialties}}</p>
+    <p>
+      <strong>Job Profile :</strong>
+      {{company.job_profile}}
+    </p>
+  </div>
+
+  <div class="tabPage eligibilityForm " *ngIf="currentPage=='eligibilityForm' ">
+    <app-eligibility-form></app-eligibility-form>
+  </div>
+  <div class="tabPage studentApplications " *ngIf="currentPage=='studentApplications' ">
+    <app-student-applications></app-student-applications>
+  </div>
+</div>
+
+<app-student-page></app-student-page>

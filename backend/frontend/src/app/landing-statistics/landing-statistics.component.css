@@ -1,0 +1,23 @@
+#background{
+    background: url("https://wallpaperstudio10.com/static/wpdb/wallpapers/3840x2160/170468.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 56px);
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-bottom: 10px;
+}
+.landing-content{
+    color: white;
+}
+.img {
+    border-radius: 50%;
+    height: 40px;
+    width:40px;
+}
+
