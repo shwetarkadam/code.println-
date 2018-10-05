@@ -13,7 +13,7 @@ var passportLocal=require("passport-local").Strategy;
 var cors = require("cors");
 
 
-setTimeout(() => {mongoose.connect('mongodb://mongo/myappdatabase')}, 1000)
+setTimeout(() => {mongoose.connect('mongodb://mongo/myappdatabase')}, 5000)
 
 // mongoose.connect("mongodb://localhost/petShop1");
 
