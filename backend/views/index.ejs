@@ -1,33 +1,142 @@
 <% include layout-header %>
 
-        
-        
-                <main role="main" class="col-md-9 ml-sm-auto col-lg-12 px-4">
-                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Events</h1>
-                        <div class="btn-toolbar mb-2 mb-md-0">
-                            <div class="btn-group mr-2">
-                                <button class="btn btn-sm btn-outline-secondary">Share</button>
-                                <button class="btn btn-sm btn-outline-secondary">Export</button>
-                            </div>
-                            <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                                <span data-feather="calendar"></span>
-                                This week
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-                    
-                    
-                </main>
-     
- 
-        <!-- FOOTER -->
-        <footer class="container">
-            <p class="float-right"><a href="#">Back to top</a></p>
-            <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-        </footer>
+
+
+<main role="main" class="col-md-9 ml-sm-auto col-lg-12 px-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Events</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This week
+            </button>
+        </div>
+    </div>
+    
+
 
     
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class="container col-md-9 ml-0">
+                <div class="row">
+                    <% for(var i=0; i < events.length; i++) { %>
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm " >
+                                <img class="card-img-top" onclick="alert('sefse')" src="/app-data/event-photo/<%= events[i].image %>"  style="height: 225px; width: 100%; display: block;">
+                                <div class="card-body">
+                                    <h3 class="card-text">
+                                            <%= events[i].name %>
+                                    </h3>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#peekModal-<%= events[i].image.replace('.','') %>">
+                                                <i data-feather="eye"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#trashModal-<%= events[i].image.replace('.','') %>">
+                                                <strong><i data-feather="trash"></i></strong>
+                                            </button>
+
+                                            
+                                            <!-- Peek Modal -->
+                                            <div class="modal fade" id="peekModal-<%= events[i].image.replace('.','') %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel"><%= events[i].name %></h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                        <img src="/app-data/event-photo/<%= events[i].image %>"  style="height: 225px; width: 100%; display: block;">
+                                                        <h3>
+                                                                Status
+                                                            </h3>
+                                                            <hr>
+                                                            <%= events[i].date %>
+                                                            <%= events[i].location %>
+                                                            
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                        <button type="button" class="btn btn-danger">Confirm Delete</button>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+
+                                        <!-- Trash Modal -->
+                                        <div class="modal fade" id="trashModal-<%= events[i].image.replace('.','') %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Confirm Delete</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                Do you really want to delete the event <b><i><%= events[i].name %></i></b>
+                                                </div>
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                                <button type="button" class="btn btn-danger">Confirm Delete</button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+
+
+                                        </div>
+                                        <small class="text-muted"><%= events[i].date %></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            <div class="container col-md-3 ">
+                <div id="calender-test"></div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+</main>
+
+
+<!-- FOOTER -->
+<footer class="container">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+
+<script>
+    
+    // var element = caleandar(document.getElementById('calender-test'));
+    var events = [
+    <% for(var i=0; i < events.length; i++) { %>
+        {'Date': new Date(" <%= events[i].date %> "), 'Title': '<%= events[i].name %>'},
+    <% } %>
+
+    
+    ];
+
+
+    var settings={
+        
+    }
+    
+    caleandar(document.getElementById('calender-test'), events, settings);
+    
+</script>
+
 <% include layout-footer %>

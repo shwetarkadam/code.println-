@@ -35,6 +35,7 @@ var usersRouter = require('./routes/users');
 var studentRouter = require('./routes/student');
 var loginRouter = require("./routes/login");
 var councilRouter = require("./routes/council");
+var eventRouter = require("./routes/event");
 var app = express();
 var eventRouter = require("./routes/event");
 // view engine setup
@@ -68,11 +69,12 @@ app.get("/ee",function(req,res){
 app.use(companyRouter);
 app.use(councilRouter);
 app.use(studentRouter);
-app.use(loginRouter);
+app.use(loginRouter); 
+app.use("/event", eventRouter);
 
-console.log((path.join(__dirname, 'frontend/dist/')));
+console.log((path.join(__dirname, 'fro ntend/dist/')));
 app.use(express.static(path.join(__dirname, 'frontend/dist/')));
-
+  
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/event",eventRouter);
