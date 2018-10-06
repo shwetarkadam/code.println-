@@ -8,9 +8,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
+
     <title>Collapsible sidebar using Bootstrap 4</title>
-    
+
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
@@ -19,13 +19,13 @@
     
     <!-- Scrollbar Custom CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-    
+
     <link href="/css/style2.css" rel="stylesheet">
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    
-    
+
+
     <style>
         .collapsible {
             background-color: #808080;
@@ -38,24 +38,24 @@
             outline: none;
             font-size: large;
         }
-        
+
         .active, .collapsible:hover {
             color: #9370DB;
             background-color: #fff;
         }
-        
+
         .collapsible:after {
             content: '\002B';
-            
+
             font-weight: bold;
             float: right;
             margin-left: 5px;
         }
-        
+
         .active:after {
             content: "\2212";
         }
-        
+
         .content {
             padding: 0 18px;
             max-height: 0;
@@ -78,37 +78,41 @@
                     <a href="#section1">Status</a>
                 </li>
                 <li>
-                    <a href="#section2">Resources</a>
+                    <a href="#section2">Check List</a>
                 </li>
                 <li>
-                    <a href="#section3">Volunteers</a>
+                    <a href="#section3">Resources</a>
+                </li>
+
+                <li>
+                    <a href="#section4">Volunteers</a>
                 </li>
                 <li>
-                    <a href="#section4">Particpants</a>
+                    <a href="#section5">Particpants</a>
                 </li>
                 <li>
-                    <a href="#section5">Permissions</a>
+                    <a href="#section6">Permissions</a>
                 </li>
-                
+
                 <li>
-                    <a href="#section6">Sponsors</a>
+                    <a href="#section7">Sponsors</a>
                 </li>
                 <li>
-                    <a href="#section7">Analytics</a>
+                    <a href="#section8">Analytics</a>
                 </li>
-                
+
             </ul>
-            
-            
+
+
         </nav>
-        
+
         <!-- Page Content  -->
         <div id="content">
             <div  id= "section1" class="line"></div>
             <div style="background-color:white; padding:20px;">
                 <br/>
                 <div>
-                    
+
                     <div class="container-fluid">
                         <h2>STATUS</h2>
                         <hr class="symbol">
@@ -137,21 +141,21 @@
                             </div>
                             <div class="col-md-3">
                                     <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-                                    
+
                                 </div>
-                        </div> 
+                        </div>
                     </div>
-                    
+
                     <br/>
                 </div>
             </div>
-            <div id="section2" class="line"></div>
-            
-            
+            <div id="section3" class="line"></div>
+
+
             <div  style="background-color:white; padding:20px;">
                 <br/>
                 <div>
-                    
+
                     <h2>Resources</h2>
                     <hr class="symbol">
                     <button class="collapsible">Rooms</button>
@@ -166,11 +170,11 @@
                     <div class="content">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                     </div>
-                    
+
                 </div>
             </div>
             <br/>
-            <div id="section3"></div>
+            <div id="section4"></div>
             <div style="background-color:white; padding:20px;">
                 <div>
                     <h2>Volunteers</h2>
@@ -211,7 +215,7 @@
                     </table>        </div>
                 </div>
                 <div  id="section4"  class="line"></div>
-                
+
                 <div style="background-color:white; padding:20px;">
                     <h3>Section 4</h3>
                 </div>
@@ -246,8 +250,8 @@
                             <div style="background-color:white; padding:20px;">
                                 <br/>
                                 <div>
-                                    
-                                    
+
+
                                     <section id="doctor-team" class="section-padding">
                                         <div class="container">
                                             <div class="row">
@@ -263,16 +267,16 @@
                                                             <a href="<%=event.sponsors[i].link %>">
                                                                 <img src="/img/<%=event.sponsors[i].image %>" alt="..." class="team-img"></a>
                                                                 <div class="caption">
-                                                                    
+
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <% } %>
-                                                        
-                                                        
+
+
                                                     </div>
                                                     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-                                                    
+
                                                     <!-- jQuery CDN - Slim version (=without AJAX) -->
                                                     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
                                                     <!-- Popper.JS -->
@@ -288,7 +292,7 @@
                                                             $("#sidebar").mCustomScrollbar({
                                                                 theme: "minimal"
                                                             });
-                                                            
+
                                                             $('#sidebarCollapse').on('click', function () {
                                                                 $('#sidebar, #content').toggleClass('active');
                                                                 $('.collapse.in').toggleClass('in');
@@ -296,11 +300,11 @@
                                                             });
                                                         });
                                                     </script>
-                                                    
+
                                                     <script>
                                                         var coll = document.getElementsByClassName("collapsible");
                                                         var i;
-                                                        
+
                                                         for (i = 0; i < coll.length; i++) {
                                                             coll[i].addEventListener("click", function() {
                                                                 this.classList.toggle("active");
@@ -313,11 +317,10 @@
                                                             });
                                                         }
                                                     </script>
-                                                    
+
                                                 </body>
-                                                
+
                                                 </html>
-                                                
-                                                
+
+
                                                 <% include layout-footer %>
-                                                
