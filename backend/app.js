@@ -11,7 +11,9 @@ var Student = require("./model/student")
 var app = express();
 var passportLocal=require("passport-local").Strategy;
 var cors = require("cors");
+var multer = require('multer');
 
+var upload = multer();
 
 setTimeout(() => {mongoose.connect('mongodb://mongo/myappdatabase')}, 5000)
 
@@ -36,6 +38,7 @@ var studentRouter = require('./routes/student');
 var loginRouter = require("./routes/login");
 var councilRouter = require("./routes/council");
 var eventRouter = require("./routes/event");
+var volunteerRouter = require("./routes/volunteer-form");
 var app = express();
 var eventRouter = require("./routes/event");
 // view engine setup
@@ -47,7 +50,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(__dirname + "/public"));
-
+app.use(upload.array()); 
 
 
 app.get("/ee",function(req,res){
@@ -76,6 +79,8 @@ console.log((path.join(__dirname, 'fro ntend/dist/')));
 app.use(express.static(path.join(__dirname, 'frontend/dist/')));
   
 app.use('/', indexRouter);
+app.use('/form/volunteer', volunteerRouter);
+
 app.use('/users', usersRouter);
 app.use("/event",eventRouter);
 // catch 404 and forward to error handler
