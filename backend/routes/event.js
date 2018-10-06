@@ -11,7 +11,8 @@ router.get('/:id', function(req, res, next) {
             console.log("error in routes/event/event/get");
             res.end("No such form");
         }
-		console.log(data)
+		console.log(data[0])
+		
         res.render("event" , {event:data[0]});
 	});
 });
