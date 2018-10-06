@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var bodyParser = require('body-parser');  
+var bodyParser = require('body-parser');
 var mongoose = require("mongoose");
 var session = require("express-session");
 var passport = require("passport");
@@ -42,7 +42,7 @@ var volunteerRouter = require("./routes/volunteer-form");
 var participantRouter = require("./routes/participant-form");
 
 var app = express();
-
+var eventRouter = require("./routes/event");
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -58,13 +58,13 @@ app.use(upload.array());
 app.get("/ee",function(req,res){
   res.end("Temp");
   console.log("Test");
-    
+
   console.log(req.body)
   // Student.find({},function(err,data){
 
   // 	var studentList = [];
   // 	data.forEach(function(s){
-      
+
   // 		studentList.push(s.name);
   // 	});
   // 	res.json(studentList);
@@ -86,7 +86,7 @@ app.use('/form/participant', participantRouter);
 
 
 app.use('/users', usersRouter);
-
+app.use("/event",eventRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -113,27 +113,27 @@ app.use(function(err, req, res, next) {
     passReqToCallback : true // allows us to pass back the entire request to the callback
   },
   function(req, username, password,done) { // callback with email and password from our form
-  
+
     // find a user whose email is the same as the forms email
     // we are checking to see if the user trying to login already exists
     Student.findOne({ 'local.username' :  username }, function(err, user) {
         // if there are any errors, return the error before anything else
         if (err)
           return done(err),false,{sucess: false , msg:""};
-  
+
         // if no user is found, return the message
         if (!user)
-          return done(null, false,{sucess:false,msg:"Invalid User"}) ; 
-  
+          return done(null, false,{sucess:false,msg:"Invalid User"}) ;
+
         // if the user is found but the password is wrong
         if (!user.validPassword(password))
-        return done(null, false, {sucess:false,msg:"Invalid Passwoad"}); 
-  
+        return done(null, false, {sucess:false,msg:"Invalid Passwoad"});
+
         // all is well, return successful user
         return done(null, user,{sucess:true,msg:""});
     });
-  
-  })); 
+
+  }));
 
   passport.use('local-signup',new passportLocal({  // by default, local strategy uses username and password, we will override with email
     usernameField : 'username',
@@ -141,7 +141,7 @@ app.use(function(err, req, res, next) {
     passReqToCallback : true // allows us to pass back the entire request to the callback
   },
   function(req, username, password,done) {
-  
+
     process.nextTick(function() {
     // find a user whose email is the same as the forms email
     // we are checking to see if the user trying to login already exists
@@ -150,16 +150,16 @@ app.use(function(err, req, res, next) {
         // if there are any errors, return the error
         if (err)
         return done(err, false,{sucess:false,msg:""});
-  
+
         // check to see if theres already a user with that email
         if (user) {
           return done(null, false,{sucess:false,msg:"Username used"});
         }else {
-  
+
             // if there is no user with that email
             // create the user
             var newUser            = new Student();
-  
+
             // set the user's local credentials
             newUser.username    = username;
             newUser.name   = req.body.name ;
@@ -173,14 +173,13 @@ app.use(function(err, req, res, next) {
                   return done(null, user,{sucess:true,msg:""});
             });
         }
-  
-    });    
-  
+
     });
-  
+
+    });
+
   }
-  
+
   ));
 
 module.exports = app;
-
