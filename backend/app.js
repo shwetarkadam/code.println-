@@ -39,6 +39,8 @@ var loginRouter = require("./routes/login");
 var councilRouter = require("./routes/council");
 var eventRouter = require("./routes/event");
 var volunteerRouter = require("./routes/volunteer-form");
+var participantRouter = require("./routes/participant-form");
+
 var app = express();
 
 // view engine setup
@@ -80,6 +82,8 @@ app.use(express.static(path.join(__dirname, 'frontend/dist/')));
   
 app.use('/', indexRouter);
 app.use('/form/volunteer', volunteerRouter);
+app.use('/form/participant', participantRouter);
+
 
 app.use('/users', usersRouter);
 
