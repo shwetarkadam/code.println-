@@ -4,10 +4,16 @@ var Student = require("../model/student");
 var Event  = require("../model/event");
 
 
-router.get("/",function(req,res){
-	console.log("Test");
-	console.log(req.body)
-	res.end("Test events");
+/* GET users listing. */
+router.get('/:id', function(req, res, next) {
+    Event.find({image:req.params.id},function(err,data){
+		if( err)  {
+            console.log("error in routes/event/event/get");
+            res.end("No such form");
+        }
+		console.log(data)
+        res.render("event" , {event:data[0]});
+	});
 });
 
 
