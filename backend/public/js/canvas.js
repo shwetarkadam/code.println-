@@ -3,7 +3,7 @@ window.onload = function() {
 var chart = new CanvasJS.Chart("chartContainer", {
     animationEnabled: true,
     title: {
-        text: "Desktop Search Engine Market Share - 2016"
+        text: "CURRENT STATUS OF EVENT"
     },
     data: [{
         type: "pie",
